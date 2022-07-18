@@ -16,12 +16,14 @@ pipeline {
         }
         
         stage('Spin upp ansible and execute playbook'){
-            sh '''
+            steps{
+                sh '''
             vagrant up
             vagrant ssh acs
             git branch: 'main', changelog: false, poll: false, url: 'https://github.com/gayat19/CDSampleRepo.git'
             ansiblePlaybook installation: 'ansible', playbook: './installdocker.yaml'
             '''
+            }
         }
     }
 }
