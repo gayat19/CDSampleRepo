@@ -5,7 +5,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 echo 'Clone from github repository'
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/akilagithub/VagrantVMAnsible.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/gayat19/CDSampleRepo.git'
             }
         }
         stage('Provision Infra with Ansible') {
@@ -19,7 +19,7 @@ pipeline {
             sh '''
             vagrant up
             vagrant ssh acs
-            git branch: 'main', changelog: false, poll: false, url: 'https://github.com/akilagithub/VagrantVMAnsible.git'
+            git branch: 'main', changelog: false, poll: false, url: 'https://github.com/gayat19/CDSampleRepo.git'
             ansiblePlaybook installation: 'ansible', playbook: './installdocker.yaml'
             '''
         }
