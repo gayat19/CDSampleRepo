@@ -5,8 +5,8 @@
 # ---------------------------------------------------
 echo "EXECUTING STEP 1 --> /etc/hosts FILE UPDATION"
 cat >>/etc/hosts<<EOF
-172.16.1.100 acs.example.com acs
-172.16.1.101 node1.example.com node1
+172.16.1.100 acs.example.com acs1
+172.16.1.101 node1.example.com nodes1
 EOF
 echo "DONE..."
 # ---------------------------------------------------
