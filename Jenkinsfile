@@ -19,7 +19,7 @@ pipeline {
             steps{
                 bat '''
             vagrant up
-            vagrant ssh acs
+            vagrant ssh acs2
             git branch: 'master', changelog: false, poll: false, url: 'https://github.com/gayat19/CDSampleRepo.git'
             ansiblePlaybook installation: 'ansible', playbook: './installdocker.yaml'
             '''
