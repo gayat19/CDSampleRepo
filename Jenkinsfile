@@ -17,7 +17,7 @@ pipeline {
         
         stage('Spin upp ansible and execute playbook'){
             steps{
-                sh '''
+                bat '''
             vagrant up
             vagrant ssh acs
             git branch: 'master', changelog: false, poll: false, url: 'https://github.com/gayat19/CDSampleRepo.git'
